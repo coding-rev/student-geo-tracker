@@ -43,12 +43,17 @@ class _HomeScreenState extends State<HomeScreen> {
         :ListView.builder(
           itemCount: _items.length,
           itemBuilder: (context, index) {
-            return EachStudentRowWidget(
-              firstName: _items[index]["first_name"],
-              lastName: _items[index]["last_name"],
-              email: _items[index]["email"],
-              gender: _items[index]["gender"],
-              page: MapScreen(lat:38.05106, long:114.463347),
+            return Column(
+              children: [
+                EachStudentRowWidget(
+                  firstName: _items[index]["first_name"],
+                  lastName: _items[index]["last_name"],
+                  email: _items[index]["email"],
+                  gender: _items[index]["gender"],
+                  page: MapScreen(lat:38.05106, long:114.463347),
+                ),
+                SizedBox(height: 5,)
+              ],
             );
           }),
     );
