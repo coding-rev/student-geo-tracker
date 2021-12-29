@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trackapp/constants.dart';
 import 'package:trackapp/controllers/loadData.dart';
+import 'package:trackapp/screens/mapScreen.dart';
 
 
 class HomeScreen extends StatefulWidget {
+  static const String routeName = "/homescreen";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -41,16 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
         :ListView.builder(
           itemCount: _items.length,
           itemBuilder: (context, index) {
-            return Column(
-              children: [
-                EachStudentRowWidget(
-                  firstName: _items[index]["first_name"],
-                  lastName: _items[index]["last_name"],
-                  email: _items[index]["email"],
-                  gender: _items[index]["gender"],
-                ),
-                SizedBox(height: 5),
-              ],
+            return EachStudentRowWidget(
+              firstName: _items[index]["first_name"],
+              lastName: _items[index]["last_name"],
+              email: _items[index]["email"],
+              gender: _items[index]["gender"],
+              page: MapScreen(lat:38.05106, long:114.463347),
             );
           }),
     );
@@ -65,19 +63,23 @@ class EachStudentRowWidget extends StatelessWidget {
     required this.firstName,
     required this.lastName,
     required this.email,
-    required this.gender 
+    required this.gender,
+    required this.page, 
     }) : super(key: key);
 
   final String firstName;
   final String lastName;
   final String email;
   final String gender;
+  final Widget page; 
 
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+      },
       style: ElevatedButton.styleFrom(
         primary: Colors.red,
         shape: new RoundedRectangleBorder(
@@ -85,7 +87,7 @@ class EachStudentRowWidget extends StatelessWidget {
           
         ),
         padding: EdgeInsets.symmetric(
-            horizontal: deviceSize.width * 0.02,
+            horizontal: deviceSize.width * 0.01,
             vertical: deviceSize.height * 0.03),
       ),
       child: Row(

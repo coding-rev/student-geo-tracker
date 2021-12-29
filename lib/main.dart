@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trackapp/screens/homeScreen.dart';
+import 'package:trackapp/screens/mapScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
+      
     );
   }
 }
