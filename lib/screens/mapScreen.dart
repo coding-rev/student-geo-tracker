@@ -41,12 +41,12 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     // Setting location on map and adding custom pin to location
-    LatLng pinPosition = LatLng(widget.long, widget.lat);
+    LatLng pinPosition = LatLng(widget.lat, widget.long);
    
     // these are the minimum required values to set 
     // the camera position 
     CameraPosition initialLocation = CameraPosition(
-      zoom: 14,
+      zoom: 16,
       bearing: 30,
       target: pinPosition
     );
