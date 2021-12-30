@@ -5,7 +5,6 @@ import 'package:trackapp/screens/mapScreen.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  static const String routeName = "/homescreen";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -50,7 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   lastName: _items[index]["last_name"],
                   email: _items[index]["email"],
                   gender: _items[index]["gender"],
-                  page: MapScreen(lat:38.05106, long:114.463347),
+                  page: MapScreen(
+                    lat:_items[index]["lat"], 
+                    long:_items[index]["long"],
+                    studentName: _items[index]["first_name"]+' '+_items[index]["last_name"],
+                    ),
                 ),
                 SizedBox(height: 5,)
               ],
@@ -92,7 +95,7 @@ class EachStudentRowWidget extends StatelessWidget {
           
         ),
         padding: EdgeInsets.symmetric(
-            horizontal: deviceSize.width * 0.01,
+            horizontal: deviceSize.width * 0.005,
             vertical: deviceSize.height * 0.03),
       ),
       child: Row(
