@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trackapp/constants.dart';
+import 'package:trackapp/utils/authentication.dart';
+import 'package:trackapp/widgets/googleSignInButton.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({ Key? key }) : super(key: key);
@@ -19,7 +21,7 @@ class LoginScreen extends StatelessWidget {
                   // brand section
                   CircleAvatar(
                     backgroundImage: AssetImage("assets/background1.jpg"),
-                    radius: 45,
+                    radius: 60,
                   ),
                   Text(app_name, style: WhiteTexts.texth4,),
                   // page title
@@ -28,9 +30,22 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // section 2
-            Text("Login Screen", style: WhiteTexts.texth2,),
-            
+            // section 2 | Login btn
+            FutureBuilder(
+                future: Authentication.initializeFirebase(context: context),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('Error initializing Firebase');
+                  } else if (snapshot.connectionState == ConnectionState.done) {
+                    return GoogleSignInButton();
+                  }
+                  return CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      Colors.orange,
+                    ),
+                  );
+                },
+              ),
 
            
 

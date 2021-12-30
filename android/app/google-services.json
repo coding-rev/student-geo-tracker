@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "543626233241",
+    "project_id": "trackapp-6633e",
+    "storage_bucket": "trackapp-6633e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543626233241:android:1886791afd08a2d048bf08",
+        "android_client_info": {
+          "package_name": "com.example.trackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543626233241-srgf8fkfocjikfis8l2cmtmhi1l0u5p7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDACSMyUELH8jkhV_WiwYNGs_eXJZUjQLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543626233241-srgf8fkfocjikfis8l2cmtmhi1l0u5p7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

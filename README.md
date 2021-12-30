@@ -1,16 +1,34 @@
 # trackapp
+A Cross platform mobile tracking app to discover students location given each students location(latitude and longitude)
 
-A new Flutter project.
 
-## Getting Started
+# Lib Folder Structure
+1. Screen Folder
+- Contains all UI/UX page designs of the projects
+2. Utils Folder
+- Contains the logical operations of the app
+3. Widget Folder
+- Consist of all the custom widgets in the app
+4. Constants.dart File
+- Comprises of all constant values and styles in the App
 
-This project is a starting point for a Flutter application.
+# Getting Started
+1. Clone the project
+2. Install all dependencies by running "$ flutter pub get" in terminal
+3. Run the project using "$ flutter run" in terminal or any other alternative
 
-A few resources to get you started if this is your first Flutter project:
+Good to go!
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Technologies
+1. Dart 2.13.1
+2. Flutter 2.2.1
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Third Party Packages
+1. google_maps_flutter aids working with google maps in flutter
+2. firebase_core plugin for Firebase Core, enabling connecting to multiple Firebase apps
+3. firebase_auth aids in enabling Android and iOS authentication
+4. google_sign_in  for a secure authentication system for signing in with Google Account
+
+
+
+

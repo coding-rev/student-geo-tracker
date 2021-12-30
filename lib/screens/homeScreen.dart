@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trackapp/constants.dart';
-import 'package:trackapp/controllers/loadData.dart';
 import 'package:trackapp/screens/login.dart';
 import 'package:trackapp/screens/mapScreen.dart';
+import 'package:trackapp/utils/loadData.dart';
 import 'package:trackapp/widgets/eachStudentRowWidget.dart';
 
 class HomeScreen extends StatefulWidget {
